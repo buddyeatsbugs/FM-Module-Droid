@@ -26,17 +26,45 @@ int written = 0;
 printf("The value of count is %d%n. \n", count, &written);
 printf("%d bytes were printed. \n", written);
 ```
-# Integer Vulns
+# Integer O
+```
+bool CheckLogin(char* username, char* password){
+  unsigned short len = strlen(username) + 1;
+  char* _username = (char*) malloc(len);
+  strcpy(_username, username);
+}
+```
 
+# Integer Signed Error
+```
+bool CheckLogin(char* username, int len, char* password){
+  char _username[32] = "";
+  if(len < 32)
+    strncpy(_username, username, len);
+}
+```
+
+# Integer Vuln Detection
+```
+0x7f and 0x80 (127 and 128)
+0xff and 0x100 (255 and 256)
+0x7ffff and 0x8000 (32767 and 32768)
+0xffff and 0x10000 (65535 and 65536)
+0x7fffffff and 0x80000000 (2147483647 and 2147483648)
+0xffffffff and 0x0 (4294967295 and 0)
+```
 
 # Off by One
 ```
 bool CheckLogin(char* username, char* password){
   char _username[32];
   int i;
-  for(i=0; 
+  for(i = 0; username[i] && i < 32; i++){
+    _username[i] = username[i];
+    _username[i] = 0;
+  }
 }
-
+```
 
 
 # BO
