@@ -3,6 +3,7 @@
 
 # HO
 ```
+Find Payloads in Buffer Overflow's Section
 
 bool CheckLogin(char* username, char* password){
   char* _username = (char*) malloc(32);
@@ -29,6 +30,12 @@ printf("%d bytes were printed. \n", written);
 
 
 # Off by One
+```
+bool CheckLogin(char* username, char* password){
+  char _username[32];
+  int i;
+  for(i=0; 
+}
 
 
 
