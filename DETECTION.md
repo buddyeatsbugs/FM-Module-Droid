@@ -16,6 +16,7 @@ bool CheckLogin(char* username, char* password){
 •”%x” Read data from the stack
 •”%s” Read character strings from the process’ memory
 •”%n” Write an integer to locations in the process’ memory
+• Remember to URL-encode the % character as %25
 
 %n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n
 %s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s
