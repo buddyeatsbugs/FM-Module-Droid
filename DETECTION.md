@@ -6,9 +6,11 @@
 
 # Format Strings
 ```
+•”%x” Read data from the stack
+•”%s” Read character strings from the process’ memory
+•”%n” Write an integer to locations in the process’ memory
+
 %n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n%n
-%s
-%x
 %s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s
 
 
